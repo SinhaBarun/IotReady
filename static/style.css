@@ -1,0 +1,110 @@
+h2, h5 {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Sofia Sans', sans-serif;
+    background: #ebebe0;
+}
+
+
+section {
+    background: white;
+    margin: 2rem;
+    margin: 1rem;
+    border-radius: 3px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:1rem 2rem;
+    padding: 1.5rem;
+    /* border-color: black;
+    border-radius: 2rem; */
+}
+
+input {
+    background:  #ebebe0;
+    border: 1px white;
+    border-radius: 5px;
+    padding: 0.5rem;
+    
+}
+
+label {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.mandatory {
+    color: rgb(242, 38, 38);
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-section__hub {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    
+}
+
+.form-section__GRN {
+    grid-column: 2 /3;
+    grid-row: 1 / 2;
+}
+
+.form-section__supplier {
+    grid-column: 1 /2;
+    grid-row: 2 / 3;
+}
+
+.form-section__supplier-name {
+    grid-column: 1 /2;
+    grid-row: 3 / 4 ;
+}
+
+.form-section__supplier input, .form-section__hub input {
+    font-weight: bold;
+}
+
+.summary-table, .create-list {
+    padding: 1rem;
+    /* background: red; */
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 0.25rem;
+    margin-top: 1rem;
+    width: 100%;
+    border: 1px solid #a5a59f;
+}   
+
+th,td {
+    border: 1px solid #a5a59f;
+    text-align: center;
+}
+
+th {
+    color:rgb(80 72 72 / 75%);
+    font-weight: 400;
+}
+
+.input__checkbox {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.heading-secondary {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+.heading__h5 {
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+}

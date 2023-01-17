@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IotReady</title>
+    <link rel="stylesheet" href="{{ url_for('static',     filename = 'style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <section class="first-section">
+            <form action="">
+                <div class="form-section form-section__hub">
+                    <label for="hub">Hub <span class="mandatory">*</span> </label>
+                    <input type="text" value={{data.hub}}>
+                </div>
+                <div class="form-section form-section__GRN">
+                    <label for="GRN">GRN</label>
+                    <input type="text">
+                </div>
+                <div class="form-section form-section__supplier">
+                    <label for="supplier">Supplier <span class="mandatory">*</span> </label>
+                    <input type="text" value="{{data.supplier}}">
+                </div>
+                <div class="form-section form-section__supplier-name">
+                    <label for="supplier-name">Supplier Name</label>
+                    <input type="text" value="{{data.supplier_name}}">
+                </div>
+            </form>
+        </section>
+        <section class="summary-table">
+            <h2 class="heading-secondary">SKU Summary</h2>
+            <h5 class="heading__h5">SKU Table</h5>
+            <table>
+                <tbody>
+                    <thead>
+                        <th class="input__checkbox"><input type="checkbox" name="" id=""> <span>No.</span> </th>
+                        <th>SKU</th>
+                        <th>SKU Description</th>
+                        <th>Standard Crate Quantity</th>
+                        <th>Procured Quantity</th>
+                    </th>
+                      {% for sku in data.sku_table %}
+                    <tr>
+                        <td class="input__checkbox"><input type="checkbox" name="" id=""><span>{{loop.index}}</span></td>
+                        <td><b>{{sku.sku}}</b></td>
+                        <td>{{sku.sku_description}}</td>
+                        <td>{{sku.standard_crate_quantity}}</td>
+                        <td><b>{{sku.quantity}}</b></td>
+                    </tr>
+                      {% endfor %}
+                </tbody>
+            </table>
+        </section>
+        <section class="create-list">
+            <h2 class="heading-secondary">Crate List</h2>
+            <h5 class="heading__h5">Crate Table</h5>
+            <table>
+                <tbody>
+                    <thead>
+                        <th class="input__checkbox"> <input type="checkbox" name="" id=""><span>No.</span> </th>
+                        <th>Crate</th>
+                        <th>SKU</th>
+                        <th>Packed Quantity</th>
+                        <th>Crate weight</th>
+                        <th>Is Final Crate</th>
+                    </thead>
+                  {% for sku in data.crate_table %}
+                    <tr>
+                        <td class="input__checkbox"><input type="checkbox" name="" id=""><span>{{loop.index}}</span></td>
+                        <td><b>{{sku.crate}}</b></td>
+                        <td>{{sku.sku}}</td>
+                        <td>{{sku.packed_quantity}}</td>
+                        <td>{{sku.crate_weight}}</td>
+                        <td>{{sku.is_final_crate}}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
