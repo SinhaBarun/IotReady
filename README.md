@@ -1,5 +1,7 @@
 # IotReady
 
-## Pip install requirement.txt
+## Installing the required library 
+`Pip install requirement.txt`
 
-## python main.py
+## Running the app
+`python main.py`
